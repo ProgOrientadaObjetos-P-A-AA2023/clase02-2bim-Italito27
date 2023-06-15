@@ -14,9 +14,12 @@ import java.util.Scanner;
  */
 public class Ejecutor2 {
     public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
         // 1. Crear y presentar un obj de tipo Estudiante Presencial,
         // con datos por teclado
-        Scanner entrada = new Scanner(System.in);
+        EstudiantePresencial[] listado = new EstudiantePresencial[4];
+        for(int i=0; i < listado.length; i++){
+
         entrada.useLocale(Locale.US);
         System.out.println("Ingrese nombre");
         String n = entrada.nextLine();
@@ -35,6 +38,10 @@ public class Ejecutor2 {
                 edad, creditos, costo);
         presencial.calcularMatriculaPresencial();
         
-        System.out.printf("%s\n", presencial);
+        listado[0]=presencial;
+        }
+        for (int i=0; i <listado.length; i++){
+            System.out.printf("%s\n", listado[i]);
+    }
     }
 }
